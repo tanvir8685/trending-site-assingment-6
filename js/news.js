@@ -32,6 +32,7 @@ const displayLoadNews=news=>{
     newsContainer.innerHTML=``;
     news.forEach(element => {
         console.log(element)
+        // console.log(element._id)
         const newsDiv=document.createElement('div');
         
         newsDiv.innerHTML=`
@@ -67,7 +68,9 @@ const displayLoadNews=news=>{
                                   <i class="fa-solid fa-star-half-stroke"></i>
                               </div>
                               <div class="div">
-                                  <i class="fa-solid fa-arrow-right fa-2x"></i>
+                              <button onclick="loadModal('${element._id}')" type="button" class="btn btn-primary">Primary</button>
+
+
                               </div>
                           </div>
                       </div>
@@ -78,4 +81,9 @@ const displayLoadNews=news=>{
     });
     
 }
+const loadModal=(news_id)=>{
+    console.log(news_id)
+   
+}
+
 loadCatagories()
