@@ -13,6 +13,7 @@ const loadCatagories=async()=>{
 
 }
 const displayCatagories=categories=>{
+    
     const categoriesContainer=document.getElementById('categories-container');
     
     categories.forEach(category => {
@@ -42,6 +43,11 @@ const loadNews=async(category_id)=>{
 
 }
 const displayLoadNews=news=>{
+    const number=document.getElementById('number');
+    number.innerText=news.length;
+    
+    
+    console.log(news.length)
     const newsContainer=document.getElementById('newsContainer');
     newsContainer.innerHTML=``;
     news.forEach(element => {
