@@ -68,7 +68,10 @@ const displayLoadNews=news=>{
                                   <i class="fa-solid fa-star-half-stroke"></i>
                               </div>
                               <div class="div">
-                              <button onclick="loadModal('${element._id}')" type="button" class="btn btn-primary">Show Details</button>
+                              <button onclick="loadModal('${element._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newsDetailModal">Show Details</button>
+
+
+  
 
 
                               </div>
@@ -85,8 +88,11 @@ const loadModal=async(news_id)=>{
     const url=`https://openapi.programming-hero.com/api/news/${news_id}`
     const res=await fetch(url);
     const data=await res.json();
-    console.log(data.data[0])
+    displayModal(data.data[0])
    
+}
+const displayModal=(modal)=>{
+    console.log(modal)
 }
 
 loadCatagories()
