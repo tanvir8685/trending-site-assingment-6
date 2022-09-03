@@ -93,6 +93,9 @@ const loadModal=async(news_id)=>{
 }
 const displayModal=(modal)=>{
     console.log(modal)
+    const newsDetailModalLabel=document.getElementById('newsDetailModalLabel');
+    newsDetailModalLabel.innerText=modal.title;
+    
 }
 
 loadCatagories()
