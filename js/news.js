@@ -95,6 +95,44 @@ const displayModal=(modal)=>{
     console.log(modal)
     const newsDetailModalLabel=document.getElementById('newsDetailModalLabel');
     newsDetailModalLabel.innerText=modal.title;
+    const newsDetailForModal=document.getElementById('newsDetailForModal');
+    newsDetailForModal.innerHTML=`
+    <div class="card my-5">
+    <div class="row">
+        <div class="col-2 photo">
+            <img src="${modal.thumbnail_url}" alt="human" class="img-fluid">
+        </div>
+        <div class="col-10 pt-4">
+            <h3>${modal.title}</h3>
+            <p class="pt-3">
+               ${(modal.details.length)<150?(modal.details):(modal.details).slice(0,100)+'...'}
+            </p>
+          
+
+            <div class="card-footer">
+                <div class="d-flex">
+                    <img src="${modal.author.img}" alt="" width="50px" height="50px">
+                   <div class="ps-2 name-date-part">
+                    <p>${modal.author.name}</p>   
+                    <p>${modal.author.published_date}</p>                 
+                </div>
+                </div>
+                <div>
+                   <i class="fa-solid fa-eye">&ensp; ${modal.total_view}</i>
+                   
+                </div>
+             
+                
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+    `;
     
 }
 
