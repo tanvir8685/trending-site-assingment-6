@@ -31,7 +31,7 @@ const displayLoadNews=news=>{
     const newsContainer=document.getElementById('newsContainer');
     newsContainer.innerHTML=``;
     news.forEach(element => {
-        console.log(element)
+        // console.log(element)
         // console.log(element._id)
         const newsDiv=document.createElement('div');
         
@@ -68,7 +68,7 @@ const displayLoadNews=news=>{
                                   <i class="fa-solid fa-star-half-stroke"></i>
                               </div>
                               <div class="div">
-                              <button onclick="loadModal('${element._id}')" type="button" class="btn btn-primary">Primary</button>
+                              <button onclick="loadModal('${element._id}')" type="button" class="btn btn-primary">Show Details</button>
 
 
                               </div>
@@ -81,8 +81,11 @@ const displayLoadNews=news=>{
     });
     
 }
-const loadModal=(news_id)=>{
-    console.log(news_id)
+const loadModal=async(news_id)=>{
+    const url=`https://openapi.programming-hero.com/api/news/${news_id}`
+    const res=await fetch(url);
+    const data=await res.json();
+    console.log(data.data[0])
    
 }
 
