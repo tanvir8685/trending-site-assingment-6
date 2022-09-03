@@ -20,13 +20,60 @@ const displayCatagories=categories=>{
 const loadNews=async(category_id)=>{
     // console.log(typeof(category_id))
     const url=`https://openapi.programming-hero.com/api/news/category/0${category_id}`
-    console.log(url)
+    
     const res=await fetch(url);
     const data=await res.json();
     displayLoadNews(data.data)
 
 }
 const displayLoadNews=news=>{
-    console.log(news)
+    const newsContainer=document.getElementById('newsContainer');
+    news.forEach(element => {
+        console.log(element)
+        const newsDiv=document.createElement('div');
+        
+        newsDiv.innerHTML=`
+        <div class="card my-5">
+                  <div class="row">
+                      <div class="col-2 photo">
+                          <img src="${element.thumbnail_url}" alt="human" class="img-fluid">
+                      </div>
+                      <div class="col-10 pt-4">
+                          <h3>${element.title}</h3>
+                          <p class="pt-3">
+                             ${element.details}
+                          </p>
+                        
+          
+                          <div class="card-footer">
+                              <div class="d-flex">
+                                  <img src="${element.author.img}" alt="" width="50px" height="50px">
+                                 <div class="ps-2 name-date-part">
+                                  <p>${element.author.name}</p>   
+                                  <p>${element.author.published_date}</p>                 
+                              </div>
+                              </div>
+                              <div>
+                                 <i class="fa-solid fa-eye">&ensp; ${element.total_view}</i>
+                                 
+                              </div>
+                              <div>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star"></i>
+                                  <i class="fa-solid fa-star-half-stroke"></i>
+                              </div>
+                              <div class="div">
+                                  <i class="fa-solid fa-arrow-right fa-2x"></i>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+        `;
+        newsContainer.appendChild(newsDiv)
+    });
+    
 }
 loadCatagories()
