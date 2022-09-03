@@ -175,4 +175,4 @@ const toggleSpinner=isLoading=>{
     }
 }
 loadCatagories();
-// loadNews(03);
+loadNews(03);
