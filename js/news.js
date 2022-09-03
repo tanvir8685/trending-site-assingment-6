@@ -6,6 +6,7 @@ const loadCatagories=async()=>{
 }
 const displayCatagories=categories=>{
     const categoriesContainer=document.getElementById('categories-container');
+    
     categories.forEach(category => {
         
         const categoryDiv=document.createElement('div');
@@ -28,6 +29,7 @@ const loadNews=async(category_id)=>{
 }
 const displayLoadNews=news=>{
     const newsContainer=document.getElementById('newsContainer');
+    newsContainer.innerHTML=``;
     news.forEach(element => {
         console.log(element)
         const newsDiv=document.createElement('div');
