@@ -43,7 +43,7 @@ const displayLoadNews=news=>{
                       <div class="col-10 pt-4">
                           <h3>${element.title}</h3>
                           <p class="pt-3">
-                             ${element.details}
+                             ${(element.details.length)<800?(element.details):(element.details).slice(0,800)+'...'}
                           </p>
                         
           
