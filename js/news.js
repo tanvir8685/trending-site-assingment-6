@@ -174,5 +174,12 @@ const toggleSpinner=isLoading=>{
         loaderSection.classList.add('d-none');
     }
 }
+
+function anouther(){
+    console.log('its clickrd')
+    
+}
+
+
 loadCatagories();
 loadNews(03);
