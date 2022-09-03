@@ -52,12 +52,12 @@ const displayLoadNews=news=>{
                               <div class="d-flex">
                                   <img src="${element.author.img}" alt="" width="50px" height="50px">
                                  <div class="ps-2 name-date-part">
-                                  <p>${element.author.name}</p>   
-                                  <p>${element.author.published_date}</p>                 
+                                  <p>${element.author.name?element.author.name:'no name found'}</p>   
+                                  <p>${element.author.published_date?element.author.published_date:'no date found'}</p>                 
                               </div>
                               </div>
                               <div>
-                                 <i class="fa-solid fa-eye">&ensp; ${element.total_view}</i>
+                                 <i class="fa-solid fa-eye">&ensp; ${element.total_view?element.total_view:'no data show'}</i>
                                  
                               </div>
                               <div>
@@ -113,12 +113,12 @@ const displayModal=(modal)=>{
                 <div class="d-flex">
                     <img src="${modal.author.img}" alt="" width="50px" height="50px">
                    <div class="ps-2 name-date-part">
-                    <p>${modal.author.name}</p>   
-                    <p>${modal.author.published_date}</p>                 
+                    <p>${modal.author.name?modal.author.name:'No name Found'}</p>   
+                    <p>${modal.author.published_date?modal.author.published_date:'no date found'}</p>                 
                 </div>
                 </div>
                 <div>
-                   <i class="fa-solid fa-eye">&ensp; ${modal.total_view}</i>
+                   <i class="fa-solid fa-eye">&ensp; ${modal.total_view?modal.total_view:'no data'}</i>
                    
                 </div>
              
