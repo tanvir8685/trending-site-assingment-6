@@ -23,7 +23,10 @@ const loadNews=async(category_id)=>{
     console.log(url)
     const res=await fetch(url);
     const data=await res.json();
-    console.log(data)
+    displayLoadNews(data.data)
 
+}
+const displayLoadNews=news=>{
+    console.log(news)
 }
 loadCatagories()
