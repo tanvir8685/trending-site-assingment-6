@@ -162,4 +162,5 @@ const displayModal=(modal)=>{
     
 }
 
-loadCatagories()
+loadCatagories();
+loadNews(03);
